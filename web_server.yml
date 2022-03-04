@@ -24,3 +24,7 @@
     service: 
       name: firewalld 
       state: restarted
+
+  - copy:
+    content: "{{ ansible_host }}"
+    dest: "/var/www/html/index.html"
