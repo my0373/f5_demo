@@ -2,10 +2,15 @@
 - name: This sets up an httpd webserver
   hosts: web
   tasks:
+  - name: Install firewalld
+    yum:
+      name: firewalld
+      state: present
   - name: Install apache packages 
     yum:
       name: httpd
       state: present
+  
   - name: ensure httpd is running
     service:
       name: httpd 
