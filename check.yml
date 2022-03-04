@@ -3,12 +3,13 @@
   hosts: lb
   connection: local
   gather_facts: false
+  
 
 
   tasks:
-    - name: check bigip to make sure it is online
+    - name: "check bigip to make sure it is online http://{{ ansible_host }}:8443/mgmt/shared "
       uri:
-        url: "https://{{ ansible_host }}:8443/mgmt/shared"
+        url: "http://{{ ansible_host }}:8443/mgmt/shared"
         method: GET
         status_code: 200
         timeout: 300
