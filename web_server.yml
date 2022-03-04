@@ -26,6 +26,6 @@
       state: restarted
 
   - name: Deploy content
-    copy:
-      content: "{{ ansible_host }}"
-      dest: "/var/www/html/index.html"
+    template: 
+      dest: /var/www/html/index.html 
+      src: index.html.j2
