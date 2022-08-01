@@ -1,3 +1,4 @@
 collections:
   - f5networks.f5_modules
   - servicenow.servicenow
+  - amazon.aws
